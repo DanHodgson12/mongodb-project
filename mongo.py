@@ -22,21 +22,6 @@ conn = mongo_connect(MONGO_URI)
 
 coll = conn[DATABASE][COLLECTION]
 
-""" Find documents with 'first' name set to 'douglas' """
-# documents = coll.find({"first": "douglas"})
-
-""" Delete documents with 'first' name set to 'douglas' """
-# coll.delete_one({"first": "douglas"})
-# documents = coll.find()
-
-""" Update a single document (first one only) """
-# coll.update_one(
-#     {"nationality": "american"},
-#     {"$set": {"hair_color": "maroon"}}
-# )
-# documents = coll.find({"nationality": "american"})
-
-""" Update all documents """
 coll.update_many(
     {"nationality": "american"},
     {"$set": {"hair_color": "maroon"}}
